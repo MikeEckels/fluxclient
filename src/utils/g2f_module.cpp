@@ -394,7 +394,7 @@ int convert_to_fcode_by_line(char* line, FCode* fc, char* fcode_output) {
   int subcommand = 0;
   int command_code = 0;
   float temperature = 0;
-  char* data_output;
+  //char* data_output;
   TokenResult token;
 
   if (cmd_type == 'G') {
@@ -552,7 +552,7 @@ int convert_to_fcode_by_line(char* line, FCode* fc, char* fcode_output) {
         token = find_next_token(&cmd);
         float strength = (token.ch == 'O') ? token.f/255 : 0;
         write_float(&output_ptr, strength);
-        fc->HEAD_TYPE = "LASER";
+        fc->HEAD_TYPE = (char*)"LASER";
         break;
     }
   } else if (cmd_type == 'T') {

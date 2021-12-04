@@ -41,6 +41,7 @@ int setPoints(MeshPtr triangles, std::vector< std::vector<float> > points){
 
   toPCLPointCloud2(*cloud, triangles->cloud);
   delete cloud;
+  return 0;
 }
 
 int push_backFace(MeshPtr triangles, int v0, int v1, int v2){
@@ -409,4 +410,5 @@ int write_stl_binary(MeshPtr triangles, const char* filename) {
 
     delete cloud;
     fclose(ptr_stl);
+    return 0;
 }
